@@ -17,8 +17,11 @@ import java.net.URI;
 @RequestMapping("/clients")
 public class ClientController {
 
-    @Autowired
     private ClientService service;
+
+    public ClientController(ClientService service) {
+        this.service = service;
+    }
 
     @GetMapping(value = "/hello")
     public String sayHello(){
